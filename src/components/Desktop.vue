@@ -4,12 +4,19 @@
 			<img src="../assets/icons/trash.svg" />
 			<span class="text">Trash</span>
 		</div>
+		<FolderOpen />
 	</div>
 </template>
 
 <script>
+import FolderOpen from './FolderOpen.vue';
+
 export default {
 	name: 'Desktop',
+	components: {
+		FolderOpen
+	},
+
 	data() {
 		return { isActive: false };
 	},
@@ -44,6 +51,7 @@ export default {
 .trash-icon img {
 	margin-bottom: 0.5em;
 	width: 50px;
+	user-select: none;
 }
 
 .trash-icon span {
@@ -64,5 +72,7 @@ export default {
 	width: 180%;
 	height: 110%;
 	border-radius: 0.6em;
+	outline: 1px dashed #1281a4;
+	outline-offset: -0.5em;
 }
 </style>

@@ -17,6 +17,13 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 #app {
 	position: absolute;
 	inset: 0 0 0 -1px;
