@@ -108,6 +108,7 @@ export default {
 	color: #fff;
 	border-radius: 100vw;
 	transition: background-color 150ms ease;
+	font-size: 1rem;
 }
 
 .inp:focus {

@@ -1,15 +1,19 @@
 <template>
 	<div class="folder">
+		<TopBar text="Trash" img="trash.png" />
 		<Sidebar active="trash" />
 	</div>
 </template>
 
 <script>
 import Sidebar from './folderOpen/Sidebar.vue';
+import TopBar from './folderOpen/TopBar.vue';
+
 export default {
 	name: 'FolderOpen',
 	components: {
-		Sidebar
+		Sidebar,
+		TopBar
 	}
 };
 </script>
