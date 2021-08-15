@@ -1,6 +1,7 @@
 <template>
 	<div class="topBar">
-		<img :src="require(`@/assets/icons/${img}`)" :alt="{ text }" />
+		<!-- <img src="@/assets/icons/trash.svg" :alt="{ text }" /> -->
+		<img :src="getImgUrl(img)" :alt="text" />
 		<p>{{ text }}</p>
 	</div>
 </template>
@@ -11,6 +12,11 @@ export default {
 	props: {
 		text: String,
 		img: String
+	},
+	methods: {
+		getImgUrl(img) {
+			return require(`@/assets/icons/${img}`);
+		}
 	}
 };
 </script>
@@ -27,5 +33,10 @@ export default {
 	border-radius: 3rem 3rem 0 0;
 	justify-content: center;
 	align-items: center;
+}
+
+.topBar img {
+	height: 20px;
+	margin-right: 0.5rem;
 }
 </style>

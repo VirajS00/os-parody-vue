@@ -5,16 +5,19 @@
 			<span class="text">Trash</span>
 		</div>
 		<FolderOpen />
+		<TaskBar />
 	</div>
 </template>
 
 <script>
 import FolderOpen from './FolderOpen.vue';
+import TaskBar from './taskBar.vue';
 
 export default {
 	name: 'Desktop',
 	components: {
-		FolderOpen
+		FolderOpen,
+		TaskBar
 	},
 
 	data() {

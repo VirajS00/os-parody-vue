@@ -1,6 +1,6 @@
 <template>
 	<div class="folder">
-		<TopBar text="Trash" img="trash.png" />
+		<TopBar text="Trash" img="trash.svg" />
 		<Sidebar active="trash" />
 	</div>
 </template>
@@ -28,7 +28,7 @@ export default {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -52%);
 	border-radius: 3rem;
 }
 </style>
