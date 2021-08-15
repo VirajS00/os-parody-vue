@@ -28,7 +28,7 @@ export default {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -52%);
+	transform: translate(-50%, -55%);
 	border-radius: 3rem;
 }
 </style>
