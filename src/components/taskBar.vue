@@ -40,7 +40,7 @@ export default {
 }
 
 .icon {
-	height: 35px;
+	height: 32px;
 }
 
 .searchbox {

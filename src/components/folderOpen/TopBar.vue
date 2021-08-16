@@ -1,8 +1,8 @@
 <template>
 	<div class="topBar">
-		<!-- <img src="@/assets/icons/trash.svg" :alt="{ text }" /> -->
 		<img :src="getImgUrl(img)" :alt="text" />
 		<p>{{ text }}</p>
+		<a href="#" class="close"></a>
 	</div>
 </template>
 
@@ -38,5 +38,29 @@ export default {
 .topBar img {
 	height: 20px;
 	margin-right: 0.5rem;
+}
+
+.close {
+	height: 15px;
+	width: 15px;
+	display: flex;
+	background-color: #bd4141;
+	position: absolute;
+	right: 2rem;
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+}
+
+.close::after {
+	content: 'x';
+	color: #860000;
+	font-size: 0.8rem;
+	opacity: 0;
+}
+
+.close:hover::after {
+	opacity: 1;
 }
 </style>

@@ -2,18 +2,31 @@
 	<div class="folder">
 		<TopBar text="Trash" img="trash.svg" />
 		<Sidebar active="trash" />
+		<Contents :content="tasks" />
 	</div>
 </template>
 
 <script>
 import Sidebar from './folderOpen/Sidebar.vue';
 import TopBar from './folderOpen/TopBar.vue';
+import Contents from './folderOpen/Contents.vue';
 
 export default {
 	name: 'FolderOpen',
 	components: {
 		Sidebar,
-		TopBar
+		TopBar,
+		Contents
+	},
+	data() {
+		return {
+			tasks: {}
+		};
+	},
+	created() {
+		this.tasks = {
+			type: 'trash'
+		};
 	}
 };
 </script>
