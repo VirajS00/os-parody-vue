@@ -4,7 +4,7 @@
 			<img src="../assets/icons/trash.svg" />
 			<span class="text">Trash</span>
 		</div>
-		<FolderOpen />
+		<FolderOpen content="home" />
 		<TaskBar />
 	</div>
 </template>

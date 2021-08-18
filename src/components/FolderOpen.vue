@@ -1,8 +1,15 @@
 <template>
 	<div class="folder">
-		<TopBar text="Trash" img="trash.svg" />
-		<Sidebar active="trash" />
-		<Contents :content="tasks" />
+		<div v-if="content === 'trash'">
+			<TopBar text="Trash" img="trash.svg" />
+			<Sidebar active="trash" />
+			<Contents :content="tasks" />
+		</div>
+		<div v-if="content === 'home'">
+			<TopBar text="Home" img="folder.svg" />
+			<Sidebar active="folder" />
+			<Contents :content="tasks" />
+		</div>
 	</div>
 </template>
 
@@ -18,15 +25,46 @@ export default {
 		TopBar,
 		Contents
 	},
+	props: {
+		content: String
+	},
 	data() {
 		return {
 			tasks: {}
 		};
 	},
 	created() {
-		this.tasks = {
-			type: 'trash'
-		};
+		if (this.$props.content === 'trash') {
+			this.tasks = {
+				type: 'trash'
+			};
+		} else if (this.$props.content === 'home') {
+			this.tasks = {
+				type: 'home',
+				folderContents: [
+					{
+						name: 'Users',
+						type: 'folder',
+						icon: 'folder.svg'
+					},
+					{
+						name: 'Applications',
+						type: 'folder',
+						icon: 'folder.svg'
+					},
+					{
+						name: 'Sources',
+						type: 'folder',
+						icon: 'folder.svg'
+					},
+					{
+						name: 'hello.png',
+						type: 'image',
+						icon: 'photoIcon.svg'
+					}
+				]
+			};
+		}
 	}
 };
 </script>

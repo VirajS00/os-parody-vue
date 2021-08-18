@@ -3,6 +3,9 @@
 		<div class="trash" v-if="content.type == 'trash'">
 			Nothing to see here, you’re not trash :)
 		</div>
+		<div class="folder" v-if="content.type == 'home'">
+			home
+		</div>
 	</div>
 </template>
 
@@ -11,6 +14,11 @@ export default {
 	name: 'Contents',
 	props: {
 		content: Object
+	},
+	methods: {
+		getImgUrl(img) {
+			return require(`@/assets/icons/${img}`);
+		}
 	}
 };
 </script>
