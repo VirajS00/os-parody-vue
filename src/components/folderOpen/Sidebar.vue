@@ -11,14 +11,14 @@
 			<div style="margin-top: 2rem;">
 				<div class="sidebar-el" :class="{ active: active === 'trash' }">
 					<a href="">
-						<img src="../../assets/icons/trash.svg" alt="Trash icon" />
+						<img src="@/assets/icons/trash.svg" alt="Trash icon" />
 						<p>Trash</p>
 					</a>
 				</div>
 				<div class="sidebar-el" :class="{ active: active === 'home' }">
 					<a href="">
 						<img
-							src="../../assets/icons/folder.svg"
+							src="@/assets/icons/folder.svg"
 							alt="Folder icon"
 							style="height: 15px;"
 						/>

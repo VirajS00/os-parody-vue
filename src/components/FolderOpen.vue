@@ -7,7 +7,7 @@
 		</div>
 		<div v-if="content === 'home'">
 			<TopBar text="Home" img="folder.svg" />
-			<Sidebar active="folder" />
+			<Sidebar active="home" />
 			<Contents :content="tasks" />
 		</div>
 	</div>
@@ -43,21 +43,25 @@ export default {
 				type: 'home',
 				folderContents: [
 					{
+						id: 1,
 						name: 'Users',
 						type: 'folder',
 						icon: 'folder.svg'
 					},
 					{
-						name: 'Applications',
+						id: 2,
+						name: 'Apps',
 						type: 'folder',
 						icon: 'folder.svg'
 					},
 					{
+						id: 3,
 						name: 'Sources',
 						type: 'folder',
 						icon: 'folder.svg'
 					},
 					{
+						id: 4,
 						name: 'hello.png',
 						type: 'image',
 						icon: 'photoIcon.svg'
