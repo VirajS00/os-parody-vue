@@ -8,6 +8,8 @@
 				class="folder-container"
 				v-for="{ id, name, icon } in items"
 				:key="id"
+				:class="{ selected: id === isSelected }"
+				@click="selectItem(id)"
 			>
 				<img :src="getImgUrl(icon)" alt="Folder Icon" />
 				<div class="name">{{ name }}</div>
@@ -23,14 +25,19 @@ export default {
 		content: Object
 	},
 	data() {
-		return { items: [] };
+		return { items: [], isSelected: null };
 	},
 	mounted() {
-		this.items = [...this.$props.content.folderContents];
+		if (this.$props.folderContents !== []) {
+			this.items = [...this.$props.content.folderContents];
+		}
 	},
 	methods: {
 		getImgUrl(img) {
 			return require(`@/assets/icons/${img}`);
+		},
+		selectItem(i) {
+			this.isSelected = i;
 		}
 	}
 };
@@ -74,5 +81,18 @@ export default {
 .folder-container img {
 	height: 45px;
 	margin-bottom: 0.7em;
+}
+
+.folder-container div {
+	position: relative;
+}
+
+.selected div::before {
+	content: '';
+	position: absolute;
+	inset: 0 -1em;
+	background-color: #5877c5;
+	z-index: -1;
+	border-radius: 100vw;
 }
 </style>

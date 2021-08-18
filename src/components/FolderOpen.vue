@@ -36,7 +36,8 @@ export default {
 	created() {
 		if (this.$props.content === 'trash') {
 			this.tasks = {
-				type: 'trash'
+				type: 'trash',
+				folderContents: []
 			};
 		} else if (this.$props.content === 'home') {
 			this.tasks = {
