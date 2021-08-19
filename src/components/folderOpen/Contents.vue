@@ -38,6 +38,9 @@ export default {
 		},
 		selectItem(i) {
 			this.isSelected = i;
+		},
+		UnSelectItem() {
+			this.isSelected = null;
 		}
 	}
 };

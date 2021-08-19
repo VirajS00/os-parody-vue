@@ -9,11 +9,22 @@
 		<form action="">
 			<input type="text" class="searchbox" placeholder="Your Search Query..." />
 		</form>
-		<img src="@/assets/icons/folder.svg" alt="App Menu" class="icon" />
-		<img src="@/assets/icons/terminal.svg" alt="App Menu" class="icon" />
-		<img src="@/assets/icons/settings.svg" alt="App Menu" class="icon" />
-		<img src="@/assets/icons/browser.svg" alt="App Menu" class="icon" />
-		<img src="@/assets/icons/info.svg" alt="App Menu" class="icon" />
+
+		<div class="appIcon active">
+			<img src="@/assets/icons/folder.svg" alt="App Menu" class="icon" />
+		</div>
+		<div class="appIcon">
+			<img src="@/assets/icons/terminal.svg" alt="App Menu" class="icon" />
+		</div>
+		<div class="appIcon">
+			<img src="@/assets/icons/settings.svg" alt="App Menu" class="icon" />
+		</div>
+		<div class="appIcon">
+			<img src="@/assets/icons/browser.svg" alt="App Menu" class="icon" />
+		</div>
+		<div class="appIcon">
+			<img src="@/assets/icons/info.svg" alt="App Menu" class="icon" />
+		</div>
 	</div>
 </template>
 
@@ -41,6 +52,7 @@ export default {
 
 .icon {
 	height: 32px;
+	position: relative;
 }
 
 .searchbox {
@@ -69,5 +81,23 @@ export default {
 
 ::-webkit-input-placeholder {
 	color: #98bbef;
+}
+
+.appIcon {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+}
+
+.appIcon.active::after {
+	content: '';
+	position: absolute;
+	inset: 0 -0.5rem;
+	background-color: rgb(21, 75, 216, 0.4);
+	border-bottom: 0.3em solid #3f6ad9;
+	z-index: -1;
 }
 </style>
