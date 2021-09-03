@@ -1,13 +1,11 @@
 <template>
 	<div class="folder">
-		<div v-if="content === 'trash'">
-			<TopBar text="Trash" img="trash.svg" />
-			<Sidebar active="trash" />
-			<Contents :content="tasks" />
-		</div>
-		<div v-if="content === 'home'">
-			<TopBar text="Home" img="folder.svg" />
-			<Sidebar active="home" />
+		<div>
+			<TopBar
+				text="Trash"
+				:img="content === 'trash' ? 'trash.svg' : 'folder.svg'"
+			/>
+			<Sidebar :active="content === 'trash' ? 'trash' : 'home'" />
 			<Contents :content="tasks" />
 		</div>
 	</div>

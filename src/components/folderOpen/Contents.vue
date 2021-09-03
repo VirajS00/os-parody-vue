@@ -1,9 +1,9 @@
 <template>
-	<div class="container">
+	<div class="container" @click="UnSelectItem($event)">
 		<div class="trash" v-if="content.type == 'trash'">
 			Nothing to see here, you’re not trash :)
 		</div>
-		<ul class="folder" v-if="content.type == 'home'">
+		<ul class="folder" v-if="content.type == 'home'" ref="items">
 			<li
 				class="folder-container"
 				v-for="{ id, name, icon } in items"
@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import vClickOutside from 'v-click-outside';
+
 export default {
 	name: 'Contents',
 	props: {
@@ -28,6 +30,7 @@ export default {
 		return { items: [], isSelected: null };
 	},
 	mounted() {
+		this.popupItem = this.$el;
 		if (this.$props.folderContents !== []) {
 			this.items = [...this.$props.content.folderContents];
 		}
@@ -39,9 +42,13 @@ export default {
 		selectItem(i) {
 			this.isSelected = i;
 		},
-		UnSelectItem() {
+		UnSelectItem(e) {
+			if (this.$refs.items !== e.target) return;
 			this.isSelected = null;
 		}
+	},
+	directives: {
+		clickOutside: vClickOutside.directive
 	}
 };
 </script>
@@ -66,10 +73,13 @@ export default {
 }
 
 .folder {
+	box-sizing: border-box;
 	padding: 2.5rem;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
 	gap: 2.5rem;
+	height: 100%;
+	width: 100%;
 }
 
 .folder-container {
